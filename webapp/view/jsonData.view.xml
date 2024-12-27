@@ -1,0 +1,78 @@
+<mvc:View xmlns:core="sap.ui.core" controllerName="project3.controller.jsonData"
+    xmlns:mvc="sap.ui.core.mvc"
+    xmlns="sap.m">
+    <Page id="page" title="{i18n>title}">
+    <content>
+    <Bar >
+        <contentLeft>
+            <ComboBox id="Box" selectionChange="onChange" showClearIcon="true" 
+            showSecondaryValues="true"
+				items="{path : '/ProductCollection',
+                sorter : {
+                    path : 'Category',
+                    group : true}
+                }"
+            >
+				<core:ListItem key="{ProductId}" text="{Name}" additionalText="{ProductId}"/>
+			</ComboBox>
+        </contentLeft>
+        <!-- <contentRight>
+            <SearchField id="search" search="categorySearch"></SearchField>
+        </contentRight> -->
+    </Bar>
+    <Table items = "{ProductJSONModel>/ProductCollection}" id="ProductData">
+        <columns>
+            <Column>
+                <header>
+                    <Label 
+                    text="Product Id"></Label>
+                </header>
+            </Column>
+            <Column>
+                <header>
+                    <Label 
+                    text="Product Name"></Label>
+                </header>
+            </Column>
+            <Column>
+                <header>
+                    <Label 
+                    text="Category"></Label>
+                </header>
+            </Column>
+            <Column>
+                <header>
+                    <Label 
+                    text="Price"></Label>
+                </header>
+            </Column>
+            <Column>
+                <header>
+                    <Label 
+                    text="Quantity"></Label>
+                </header>
+            </Column>
+        </columns>
+        <items>
+            <ColumnListItem>
+                <cells>
+                    <Text text="{ProductJSONModel>ProductId}"></Text>
+                    <Text text="{ProductJSONModel>Name}"></Text>
+                    <Text text="{ProductJSONModel>Category}"></Text>
+                    <Text text="{ProductJSONModel>Price}"></Text>
+                    <Text text="{ProductJSONModel>Quantity}"></Text>
+                </cells> 
+            </ColumnListItem>
+        </items>
+    </Table>
+    </content>
+    <footer>
+        <Bar>
+
+        <contentRight>
+        <Button text="Get Model" press="getJSONModel"></Button>
+        </contentRight>
+        </Bar>
+    </footer>
+    </Page>
+</mvc:View>
