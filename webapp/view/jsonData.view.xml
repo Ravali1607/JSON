@@ -5,7 +5,7 @@
     <content>
     <Bar >
         <contentLeft>
-            <ComboBox id="Box" selectionChange="onChange" showClearIcon="true" 
+            <ComboBox id="Box" change="onChange" showClearIcon="true" 
             showSecondaryValues="true"
 				items="{path : '/ProductCollection',
                 sorter : {
@@ -16,41 +16,23 @@
 				<core:ListItem key="{ProductId}" text="{Name}" additionalText="{ProductId}"/>
 			</ComboBox>
         </contentLeft>
-        <!-- <contentRight>
-            <SearchField id="search" search="categorySearch"></SearchField>
-        </contentRight> -->
     </Bar>
     <Table items = "{ProductJSONModel>/ProductCollection}" id="ProductData">
         <columns>
             <Column>
-                <header>
-                    <Label 
-                    text="Product Id"></Label>
-                </header>
+                <Label text="Product Id"></Label>
             </Column>
             <Column>
-                <header>
-                    <Label 
-                    text="Product Name"></Label>
-                </header>
+                    <Label text="Product Name"></Label>
             </Column>
             <Column>
-                <header>
-                    <Label 
-                    text="Category"></Label>
-                </header>
+                    <Label text="Category"></Label>
             </Column>
             <Column>
-                <header>
-                    <Label 
-                    text="Price"></Label>
-                </header>
+                    <Label text="Price"></Label>
             </Column>
             <Column>
-                <header>
-                    <Label 
-                    text="Quantity"></Label>
-                </header>
+                    <Label text="Quantity"></Label>
             </Column>
         </columns>
         <items>
@@ -68,10 +50,9 @@
     </content>
     <footer>
         <Bar>
-
-        <contentRight>
-        <Button text="Get Model" press="getJSONModel"></Button>
-        </contentRight>
+            <contentRight>
+                <Button text="Get Model" press="getJSONModel"></Button>
+            </contentRight>
         </Bar>
     </footer>
     </Page>
